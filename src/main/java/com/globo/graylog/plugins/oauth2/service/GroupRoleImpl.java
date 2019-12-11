@@ -1,22 +1,21 @@
 /**
  * This file is part of Graylog Plugin Oauth.
- *
+ * <p>
  * Graylog Plugin Oauth is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
- *
+ * <p>
  * Graylog Plugin Oauth is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU General Public License
  * along with Foobar. If not, see <https://www.gnu.org/licenses/>
  */
 
 package com.globo.graylog.plugins.oauth2.service;
-
 
 
 import org.bson.types.ObjectId;
@@ -46,7 +45,7 @@ public class GroupRoleImpl extends PersistedImpl implements GroupRoleInterface {
 
     @Override
     public Map<String, Validator> getEmbeddedValidations(String key) {
-    return null;
+        return null;
     }
 
     @Override
@@ -56,17 +55,17 @@ public class GroupRoleImpl extends PersistedImpl implements GroupRoleInterface {
 
     @Override
     public void setGroup(String group) {
-    this.fields.put("group", group);
+        this.fields.put("group", group);
     }
 
     @Override
     public String getRole() {
-    return String.valueOf(this.fields.get("role"));
+        return String.valueOf(this.fields.get("role"));
     }
 
     @Override
     public void setRole(String role) {
-    this.fields.put("role", role);
+        this.fields.put("role", role);
     }
 
 }

@@ -98,9 +98,9 @@ public class OAuth2Rest extends RestResource implements PluginRestResource {
         fields.put("role", cleanGroup.role());
 
 
-        GroupRoleImpl groupRole= new GroupRoleImpl(fields);
+        GroupRoleImpl groupRole = new GroupRoleImpl(fields);
 
-        try{
+        try {
             groupRoleServiceImpl.save(groupRole);
         } catch (ValidationException e) {
             e.printStackTrace();

@@ -49,7 +49,7 @@ public class OAuth2Realm extends AuthenticatingRealm {
                        ClusterConfigService clusterConfigService,
                        OAuth2 oAuth2,
                        UserHelper userHelper
-                       ) {
+    ) {
         this.userService = userService;
         this.clusterConfigService = clusterConfigService;
         this.oAuth2 = oAuth2;
@@ -73,7 +73,7 @@ public class OAuth2Realm extends AuthenticatingRealm {
                 user = userService.create();
                 user = userHelper.saveUserIfNecessary(user, config, oAuthUser);
             } else {
-                userHelper.syncRoles(user,oAuthUser);
+                userHelper.syncRoles(user, oAuthUser);
             }
 
             ShiroSecurityContext.requestSessionCreation(true);
@@ -86,7 +86,12 @@ public class OAuth2Realm extends AuthenticatingRealm {
 
     private UserOAuth getOAuthUser(String referer, OAuth2Config config) {
         String code = oAuth2.getCodeFromReferer(referer);
-        AcessToken acessToken = oAuth2.getAuthorization(code, config.clientId(), config.clientSecret(), config.tokenServerUrl(), config.redirectUrl(), config.useAuthorization());
+        AcessToken acessToken = oAuth2.getAuthorization(code,
+                config.clientId(),
+                config.clientSecret(),
+                config.tokenServerUrl(),
+                config.redirectUrl(),
+                config.useAuthorization());
         return oAuth2.getUser(config.dataServerUrl(), acessToken);
     }
 

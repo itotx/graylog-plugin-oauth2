@@ -34,7 +34,7 @@ public class OAuth2Plugin implements Plugin {
     }
 
     @Override
-    public Collection<PluginModule> modules () {
+    public Collection<PluginModule> modules() {
         return Collections.<PluginModule>singletonList(new OAuth2Module());
     }
 }
